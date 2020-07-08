@@ -1,4 +1,4 @@
-# Project Name
+# Weather App
 
 > One paragraph statement about the project.
 
