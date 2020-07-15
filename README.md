@@ -19,7 +19,7 @@ The Weather App project is build using Asynchronous Javascript and APIs call wit
 
 ![screenshot2](src/assets/images/screenshot3.png)
 
-### Not Found
+### Location Not Found
 
 ![screenshot2](src/assets/images/screenshot4.png)
 
