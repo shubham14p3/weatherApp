@@ -1,10 +1,38 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Getting Started</title>
-    <script src="https://unpkg.com/lodash@4.16.6"></script>
-  </head>
-  <body>
-   <script src="main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App on JS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/index.css" type="text/css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Current Weather</h1>
+        <form>
+            <Label>Location:</Label>
+            <br>
+            <input type="search" id="searchInput">
+            <br>
+            <button type="submit" id="submitButton">Search</button>
+        </form>
+        <p id="errorMessage">Location not found</p>
+        <div id="weatherContent">
+            <h2>Temperature:</h2>
+            <p id="celciusSection"><span id="celciusContainer"></span><span>&#176;</span>C</p>
+            <p id="fahrenheitSection"><span id="fahrenheitContainer"></span><span>&#176;</span>F</p>
+            <button id="temperatureUnitToggleButton">Switch to fahrenheit</button>
+            <h2>What to expect:</h1>
+                <p id="weatherSummaryContainer"></p>
+        </div>
+        <div id="imageContent">
+            <img src="#" id="weatherImage" />            
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
 </html>
