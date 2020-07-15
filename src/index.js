@@ -3,7 +3,7 @@ import './assets/styles/main.css';
 
 const submitButton = document.getElementById('submitButton');
 const temperatureUnitToggleButton = document.getElementById(
-  'temperatureUnitToggleButton'
+  'temperatureUnitToggleButton',
 );
 const fahrenheitSection = document.getElementById('fahrenheitSection');
 const celciusSection = document.getElementById('celciusSection');
@@ -18,7 +18,7 @@ submitButton.addEventListener('click', (ev) => {
 
 temperatureUnitToggleButton.addEventListener(
   'click',
-  toggleTemperatureUnitDisplay
+  toggleTemperatureUnitDisplay,
 );
 
 // gets data from Open Weather API
@@ -28,9 +28,8 @@ async function weatherSearch() {
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.OPEN_WEATHER_API_KEY}&units=metric`,
-      { mode: 'cors' } 
-	);
-	console.log(OPEN_process.env.OPEN_WEATHER_API_KEY);
+      { mode: 'cors' },
+    );
     const weatherData = await response.json();
     // will be a general weather type such as Rain, Snow, etc
     const weatherSummary = weatherData.weather[0].main;
@@ -54,7 +53,7 @@ async function weatherSearch() {
 
   function displayWeatherData(weatherSummary, celciusTemperature) {
     const weatherSummaryContainer = document.getElementById(
-      'weatherSummaryContainer'
+      'weatherSummaryContainer',
     );
     const celciusContainer = document.getElementById('celciusContainer');
     const fahrenheitContainer = document.getElementById('fahrenheitContainer');
@@ -108,7 +107,7 @@ async function imageSearch(searchText) {
   try {
     const response = await fetch(
       `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=${searchText}&image_type=photo`,
-      { mode: 'cors' }
+      { mode: 'cors' },
     );
     const imageData = await response.json();
     setImageContent(imageData);
