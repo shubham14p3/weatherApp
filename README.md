@@ -1,59 +1,94 @@
-# Weather App
+# Weather App On JS
 
-> One paragraph statement about the project.
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
-![screenshot](./app_screenshot.png)
+The Weather App project is build using Asynchronous Javascript and APIs call with async/await feature keeping in mind.
 
-Additional description about the project and its features.
+### Landing Page
 
-## Built With
+![screenshot1](src/assets/images/screenshot1.png)
 
-- Major languages,
-- frameworks,
-- technologies us ed
+### Weather Detail
+
+![screenshot2](src/assets/images/screenshot2.png)
+
+### Toggle Between Fahrenheit/Celcius
+
+![screenshot2](src/assets/images/screenshot3.png)
+
+### Not Found
+
+![screenshot2](src/assets/images/screenshot4.png)
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+- [Production](https://rawcdn.githack.com/shubham14p3/weatherApp/feature/project/dist/index.html)
+
+- [Deployment](https://raw.githack.com/shubham14p3/weatherApp/feature/project/dist/index.html)
+
+## Built With
+
+- HTML + CSS
+- JavaScript
+- API ()
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get started with the app, cd to the directory where you would like the repo to live by typing on your terminal:
 
-To get a local copy up and running follow these simple example steps.
+Clone the repo typing:
 
-### Prerequisites
+```
+$git clone https://github.com/shubham14p3/weatherApp.git
+```
 
-### Setup
+Create .env file
 
-### Install
+```
+OPEN_WEATHER_API_KEY='Your-API-KEY'
+PIXABAY_API_KEY='Your-API-KEY'
+(
+	Note:
+	1. The ENV file key should be placed without ''
+	2. Signup at PIXABAY and OPEN WEATHER before and get the proper API keys to make the calls.
+)
+```
 
-### Usage
+Run the following cammand
 
-### Run tests
+```
+$npm install
+```
 
-### Deployment
+```
+$npm run build
+```
+
+```
+Open Dist/index.html through live server
+```
+
+# User Interation UI
+
+- User can toggle between Fahrenheit/Celcius
+- Users can enter any valid location.
+- Users can get live report.
 
 ## Authors
 
-👤 **Author1**
+👤 **Shubham Raj**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@ShubhamRaj](https://github.com/shubham14p3)
+- Linkedin: [Shubham14p3](https://www.linkedin.com/in/shubham14p3/)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/shubham14p3/weatherApp/issues/).
 
 ## Show your support
 
@@ -61,10 +96,20 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Project requested by [Microverse Program](https://www.microverse.org/).
 
-## 📝 License
+## Future Enhancement
 
-This project is [MIT](lic.url) licensed.
+- Adding More Validation.
+- Making the Mobile friendly.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/shubham14p3/weatherApp.svg?style=flat-square
+[contributors-url]: https://github.com/shubham14p3/weatherApp/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/shubham14p3/weatherApp.svg?style=flat-square
+[forks-url]: https://github.com/shubham14p3/weatherApp/network/members
+[stars-shield]: https://img.shields.io/github/stars/shubham14p3/weatherApp.svg?style=flat-square
+[stars-url]: https://github.com/shubham14p3/weatherApp/stargazers
+[issues-shield]: https://img.shields.io/github/issues/shubham14p3/weatherApp.svg?style=flat-square
+[issues-url]: https://github.com/shubham14p3/weatherApp/issues
