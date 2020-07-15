@@ -1,0 +1,31 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.1",
+  "description": "> Weather app build with JS and Weather Api.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.8.0",
+    "stylelint-scss": "^3.17.2"
+  },
+  "scripts": {
+    "build": "webpack --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubham14p3/weatherApp.git"
+  },
+  "author": "Shubham Raj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubham14p3/weatherApp/issues"
+  },
+  "homepage": "https://github.com/shubham14p3/weatherApp#readme"
+}
