@@ -1,0 +1,51 @@
+#weatherContent {
+  display: none;
+}
+
+#imageContent {
+  display: none;
+}
+
+#errorMessage {
+  display: none;
+}
+
+#container {
+  padding: 1em;
+  text-align: center;
+}
+
+:root {
+  background-color: #e9eff5;
+  font-family: "Indie Flower", cursive;
+}
+
+button {
+  font-family: inherit;
+  background-color: blanchedalmond;
+  border-radius: 25%;
+  font-weight: bold;
+  font-size: 0.5em;
+}
+
+label {
+  font-weight: bold;
+}
+
+img {
+  border-radius: 5%;
+  width: 300px;
+  height: 200px;
+}
+
+p {
+  font-size: 2em;
+}
+
+form {
+  font-size: 2em;
+}
+
+#temperatureUnitToggleButton{
+  font-size: 1em;
+}
