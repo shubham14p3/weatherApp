@@ -11,23 +11,27 @@ The Weather App project is build using Asynchronous Javascript and APIs call wit
 
 ![screenshot1](src/assets/images/screenshot1.png)
 
-### Weather Detail
-
-![screenshot2](src/assets/images/screenshot2.png)
-
-### Toggle Between Fahrenheit/Celcius
+### Local Weather Detail
 
 ![screenshot2](src/assets/images/screenshot3.png)
 
-### Location Not Found
+### Toggle Between Fahrenheit/Celcius
+
+![screenshot2](src/assets/images/screenshot2.png)
+
+### Weather Description
 
 ![screenshot2](src/assets/images/screenshot4.png)
 
+### Grid View
+
+![screenshot2](src/assets/images/screenshot5.png)
+
 ## Live Demo
 
-- [Production](https://rawcdn.githack.com/shubham14p3/weatherApp/feature/project/dist/index.html)
+- [Production]()
 
-- [Deployment](https://raw.githack.com/shubham14p3/weatherApp/feature/project/dist/index.html)
+- [Deployment]()
 
 ## Built With
 
@@ -48,12 +52,12 @@ $git clone https://github.com/shubham14p3/weatherApp.git
 Create .env file
 
 ```
-OPEN_WEATHER_API_KEY='Your-API-KEY'
-PIXABAY_API_KEY='Your-API-KEY'
+key='Your-API-KEY' for open weather
+KEY='Your-API-KEY' for ipinfo
 (
 	Note:
 	1. The ENV file key should be placed without ''
-	2. Signup at PIXABAY and OPEN WEATHER before and get the proper API keys to make the calls.
+	2. Signup at ipinfo and OPEN WEATHER before and get the proper API keys to make the calls.
 )
 ```
 
