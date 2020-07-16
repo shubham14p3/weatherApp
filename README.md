@@ -29,9 +29,9 @@ The Weather App project is build using Asynchronous Javascript and APIs call wit
 
 ## Live Demo
 
-- [Production](https://rawcdn.githack.com/shubham14p3/weatherApp/feature/project/dist/index.html)
+- [Production](https://rawcdn.githack.com/shubham14p3/weatherApp/d47582e335023ee0995a6a8fa60c9e986c5fa080/index.html)
 
-- [Deployment](https://raw.githack.com/shubham14p3/weatherApp/feature/project/dist/index.html)
+- [Deployment](https://raw.githack.com/shubham14p3/weatherApp/gh-pages/index.html)
 
 ## Built With
 
