@@ -1,38 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App on JS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/index.css" type="text/css">
+<title>Weather APP</title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link href='style.css' rel='stylesheet'>
 </head>
-
 <body>
-    <div id="container">
-        <h1>Current Weather</h1>
-        <form>
-            <Label>Location:</Label>
-            <br>
-            <input type="search" id="searchInput">
-            <br>
-            <button type="submit" id="submitButton">Search</button>
-        </form>
-        <p id="errorMessage">Location not found</p>
-        <div id="weatherContent">
-            <h2>Temperature:</h2>
-            <p id="celciusSection"><span id="celciusContainer"></span><span>&#176;</span>C</p>
-            <p id="fahrenheitSection"><span id="fahrenheitContainer"></span><span>&#176;</span>F</p>
-            <button id="temperatureUnitToggleButton">Switch to fahrenheit</button>
-            <h2>What to expect:</h1>
-                <p id="weatherSummaryContainer"></p>
-        </div>
-        <div id="imageContent">
-            <img src="#" id="weatherImage" />            
-        </div>
-    </div>
-    <script src="main.js"></script>
+	<nav id="level" class="level">
+		<div class="level-item has-text-centered">
+			<div>
+				<h3 class="title is-3">Weather APP</h3>
+			</div>
+		</div>
+		<div class="level-item has-text-centered rows">
+			<div class="row">
+				<div class="field has-addons">
+					<div class="control">
+						<input id="cityInput" class="input" type="text" placeholder="city">
+					</div>
+					<div class="control">
+						<a id="citySearch" class="button is-info">
+							Search
+						</a>
+					</div>
+				</div>	
+				<div class="field">
+					<button id="measure" class="is-primary button is-rounded">Celsius</button>
+					<button id="clearAll" class="is-danger button is-rounded">Clear All</button>
+				</div>
+			</div>
+		</div>	
+		<div id="localWeather" class="level-item has-text-centered">
+		</div>
+	</nav>
+	<div class="container">
+		<div class="card-container" id="list">
+		</div>
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<script src="main.js"></script>
 </body>
-
 </html>
