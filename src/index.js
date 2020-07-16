@@ -1,166 +1,68 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/extensions */
+
+import {
+  singleRender,
+  fetchLocalCityName,
+} from './components/control/localControl.js';
+import {
+  toggleRender,
+  checkCity,
+} from './components/control/foreignControl.js';
+import { cityList } from './components/constructor/foreignConstructor';
 import './assets/styles/reset.css';
 import './assets/styles/main.css';
 
-const submitButton = document.getElementById('submitButton');
-const temperatureUnitToggleButton = document.getElementById(
-  'temperatureUnitToggleButton',
-);
-const fahrenheitSection = document.getElementById('fahrenheitSection');
-const celciusSection = document.getElementById('celciusSection');
+const unit = 'metric';
 
-submitButton.addEventListener('click', (ev) => {
-  // prevent page from refreshing
-  ev.preventDefault();
-
-  // gets data from Open Weather API based on input location
-  weatherSearch();
-});
-
-temperatureUnitToggleButton.addEventListener(
-  'click',
-  toggleTemperatureUnitDisplay,
-);
-
-// gets data from Open Weather API
-async function weatherSearch() {
-  const weatherContent = document.getElementById('weatherContent');
-  const location = document.getElementById('searchInput').value;
-  try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.OPEN_WEATHER_API_KEY}&units=metric`,
-      { mode: 'cors' },
-    );
-    const weatherData = await response.json();
-    // will be a general weather type such as Rain, Snow, etc
-    const weatherSummary = weatherData.weather[0].main;
-    const celciusTemperature = weatherData.main.temp;
-
-    displayWeatherData(weatherSummary, celciusTemperature);
-    // gets image from Pixabay API based on type of weather at user input location
-    imageSearch(weatherSummary);
-  } catch (error) {
-    displayErrorMessage();
-    // hide any existing weather content
-    hideWeatherContent();
-    // gets default image from Pixabay API
-    imageSearch('earth');
-  }
-
-  function displayErrorMessage() {
-    const errorMessage = document.getElementById('errorMessage');
-    errorMessage.style.display = 'block';
-  }
-
-  function displayWeatherData(weatherSummary, celciusTemperature) {
-    const weatherSummaryContainer = document.getElementById(
-      'weatherSummaryContainer',
-    );
-    const celciusContainer = document.getElementById('celciusContainer');
-    const fahrenheitContainer = document.getElementById('fahrenheitContainer');
-
-    setCelciusTemperatureDisplay();
-    setFahrenheitTemperatureDisplay();
-    // display celcius and hide fahrenheit default
-    updateDisplayToCelcius();
-
-    // set the main weather condition: Rain, Clear, Overcast, etc
-    setMainWeatherConditionDisplay();
-    // display all weather data
-    displayWeatherContent();
-    // hide any existing error messages
-    hideErrorMessages();
-
-    function hideErrorMessages() {
-      errorMessage.style.display = 'none';
-    }
-
-    function displayWeatherContent() {
-      weatherContent.style.display = 'block';
-    }
-
-    function setMainWeatherConditionDisplay() {
-      weatherSummaryContainer.innerHTML = weatherSummary;
-    }
-
-    function setFahrenheitTemperatureDisplay() {
-      fahrenheitContainer.innerHTML = celciusToFahrenheit(celciusTemperature);
-    }
-
-    function setCelciusTemperatureDisplay() {
-      celciusContainer.innerHTML = celciusTemperature;
-    }
-
-    // converts celcius to fahrenheit
-    function celciusToFahrenheit(celciusTemperature) {
-      const fahrenheitTemperature = celciusTemperature * (9 / 5) + 32;
-      return Math.round(fahrenheitTemperature * 10) / 10;
-    }
-  }
-
-  function hideWeatherContent() {
-    weatherContent.style.display = 'none';
+function toggle() {
+  const clear = document.getElementById('list');
+  clear.innerHTML = '';
+  const btn = document.getElementById('measure');
+  if (btn.innerHTML === 'Fahrenheit') {
+    btn.innerHTML = 'Celsius';
+    const unit = 'metric';
+    toggleRender(unit);
+    singleRender(unit);
+  } else if (btn.innerHTML === 'Celsius') {
+    btn.innerHTML = 'Fahrenheit';
+    const unit = 'imperial';
+    toggleRender(unit);
+    singleRender(unit);
   }
 }
 
-// gets an image from the Pixabay API
-async function imageSearch(searchText) {
-  try {
-    const response = await fetch(
-      `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=${searchText}&image_type=photo`,
-      { mode: 'cors' },
-    );
-    const imageData = await response.json();
-    setImageContent(imageData);
-    displayImageContent();
-  } catch (error) {
-    // hide the image content section
-    hideImageContent();
-  }
+const toggleTime = (() => {
+  const unit = document.getElementById('measure');
+  unit.addEventListener('click', toggle);
+})();
 
-  function hideImageContent() {
-    imageContent.style.display = 'block';
-  }
+const purge = (() => {
+  const clearAll = document.getElementById('clearAll');
+  clearAll.addEventListener('click', () => {
+    localStorage.clear();
+    window.location.reload();
+  });
+})();
 
-  function setImageContent(imageData) {
-    const weatherImage = document.getElementById('weatherImage');
-    const imageCredit = document.getElementById('imageCredit');
+const start = () => {
+  fetchLocalCityName(unit);
+  toggleRender(unit);
+};
+start();
 
-    setWeatherImage();
-    setCreditForImage();
-
-    function setCreditForImage() {
-      imageCredit.innerHTML = imageData.hits[0].user;
-      imageCredit.href = imageData.hits[0].pageURL;
-    }
-
-    function setWeatherImage() {
-      weatherImage.src = imageData.hits[0].webformatURL;
-    }
-  }
-
-  function displayImageContent() {
-    const imageContent = document.getElementById('imageContent');
-    imageContent.style.display = 'block';
-  }
-}
-
-// updates display and toggle button text between fahrenheit and celcius units
-function toggleTemperatureUnitDisplay() {
-  if (fahrenheitSection.style.display === 'none') {
-    updateDisplayToFahrenheit();
+const findCity = () => {
+  const cityInput = document.getElementById('cityInput').value;
+  if (cityList.some((city) => city.name === cityInput)) {
+    alert('Duplicate city!');
   } else {
-    updateDisplayToCelcius();
+    checkCity(cityInput, unit);
   }
+};
 
-  function updateDisplayToFahrenheit() {
-    temperatureUnitToggleButton.innerHTML = 'Switch to Celcius';
-    fahrenheitSection.style.display = 'block';
-    celciusSection.style.display = 'none';
-  }
-}
-
-function updateDisplayToCelcius() {
-  temperatureUnitToggleButton.innerHTML = 'Switch to Fahrenheit';
-  fahrenheitSection.style.display = 'none';
-  celciusSection.style.display = 'block';
-}
+const citySearch = (() => {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('citySearch').addEventListener('click', findCity);
+  });
+})();
