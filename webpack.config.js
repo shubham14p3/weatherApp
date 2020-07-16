@@ -1,7 +1,7 @@
 const path = require('path');
-const webpack = require('webpack');
-const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+
 module.exports = {
   plugins: [
     new Dotenv(),
@@ -40,4 +40,5 @@ module.exports = {
       },
     ]),
   ],
+  s,
 };
