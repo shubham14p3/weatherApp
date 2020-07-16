@@ -1,5 +1,4 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -36,8 +35,9 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'index.html'),
-        to: path.resolve(__dirname, 'build')
-      }
-    ])
-  ],s
+        to: path.resolve(__dirname, 'build'),
+      },
+    ]),
+  ],
+  s,
 };
