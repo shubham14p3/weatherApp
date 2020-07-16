@@ -5,14 +5,12 @@
 import {
   singleRender,
   fetchLocalCityName,
-} from './components/control/localControl.js';
+} from './modules/control/localControl.js';
 import {
   toggleRender,
   checkCity,
-} from './components/control/foreignControl.js';
-import { cityList } from './components/constructor/foreignConstructor';
-import './assets/styles/reset.css';
-import './assets/styles/main.css';
+} from './modules/control/foreignControl.js';
+import { cityList } from './modules/constructor/foreignConstructor';
 
 const unit = 'metric';
 
