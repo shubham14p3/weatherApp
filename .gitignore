@@ -1,0 +1,8 @@
+# Dependency directories
+/node_modules
+*/node_modules
+.env
+
+# Lock files
+*desktop.ini
+.env
