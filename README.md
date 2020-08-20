@@ -37,7 +37,7 @@ The Weather App project is build using Asynchronous Javascript and APIs call wit
 
 - HTML + CSS
 - JavaScript
-- API ()
+- API
 
 ## Getting Started
 
