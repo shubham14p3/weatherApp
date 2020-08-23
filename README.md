@@ -1,4 +1,4 @@
-# Weather App On JS
+# [Weather App On JS]
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
